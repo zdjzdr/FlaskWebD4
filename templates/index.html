@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎你,{{ name }}</title>
+</head>
+<body>
+{% block page_content %}
+{% if name %}
+    <h1>欢迎您,{{ name }}!</h1>
+{% else %}
+    <h1>欢迎你，游客</h1>
+{% endif %}
+{#<form method="POST">#}
+{##}
+{#    {{ form.hidden_tag() }}#}
+{#    <p>{{ form.name.label }}{{ form.name() }}</p>#}
+{#    <p>{{ form.pwd1.label }}{{ form.pwd1() }}</p>#}
+{#    <p>{{ form.pwd2.label }}{{ form.pwd2() }}</p>#}
+{#    <p>{{ form.addr.label }}{{ form.addr() }}</p>#}
+{#    <p>{{ form.submit() }}</p>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+    {{ wtf.quick_form(form) }}
+{% endblock %}
